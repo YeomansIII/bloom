@@ -30,7 +30,7 @@ class UserPlant(models.Model):
     created_date = models.DateField(auto_now=False, auto_now_add=True)
     type = models.ForeignKey(PlantType)
     owner = models.ForeignKey(Player)
-    timeline = Timeline()
+    timeline = models.OneToOneField(Timeline, null=True)
 
     def save(self, *args, **kwargs):
         cur_date = datetime.datetime.today()
