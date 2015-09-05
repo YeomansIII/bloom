@@ -16,16 +16,24 @@
     <link rel="stylesheet" href="../static/css/main.css">
 </head>
 <body>
-<div class="welcome-container">
-    <div class="welcome">
-        <p class="animated fadeInDown">Welcome to <a href="index.html"><img class="logo" src="../static/img/bloom.png"/></a></p>
+<div class="create-container">
+    <div class="create">
+        <p class="title animated fadeInDown">Make your habits <a href="index.html"><img class="logo" src="../static/img/bloom.png"/></a></p>
 
-        <p class="create-link"><a href="create.html">Click here to create your first plant!</a></p>
+        <form class="plant-pick" method="POST" action="/create/">
+            <p class="subtitle"> Pick your plant: </p>
 
+            <div class="plant-pick-container">
+                <input value="flowerTypeOne" name="flower" type="image" src="http://placekitten.com/200/250" alt="Flower 1">
+                <input value="flowerTypeTwo" name="flower" type="image" src="http://placekitten.com/200/250" alt="Flower 2">
+                <input value="flowerTypeThree" name="flower" type="image" src="http://placekitten.com/200/250" alt="Flower 3">
+            </div>
+        </form>
 
     </div>
 
 </div>
 <script src="../static/js/vendor/jquery-1.11.3.min.js"></script>
+<script src="../static/js/create-plant.js"></script>
 </body>
 </html>
