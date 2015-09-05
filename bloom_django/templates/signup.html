@@ -13,13 +13,13 @@
     <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:300,400' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../static/css/normalize.css">
     <link rel="stylesheet" href="../static/css/main.css">
-    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 <body>
 <div class="container">
 <div class="sign-up-box">
     <p>create your <a href="index.html">bloom</a> account</p>
     <form class="sign-up-form" method="POST" action="/signup/">
+        {% csrf_token %}
         user:<br />
         <input type="text" name="username"> <br /><br />
         password:<br />
