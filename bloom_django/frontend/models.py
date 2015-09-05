@@ -21,24 +21,24 @@ class PlantType(models.Model):
 class PressDate(models.Model):
     press_date = models.DateField()
 
+class Timeline(models.Model):
+    press_date = models.ManyToManyField(PressDate)
+
 class UserPlant(models.Model):
     name = models.CharField(max_length=100)
     last_press = models.DateField(auto_now=False, auto_now_add=True)
     created_date = models.DateField(auto_now=False, auto_now_add=True)
     type = models.ForeignKey(PlantType)
     owner = models.ForeignKey(Player)
-
+    timeline = Timeline()
 
     def save(self, *args, **kwargs):
         cur_date = datetime.datetime.today()
-        #if not self.id:
-            #self.created_date = cur_date
+        if not self.id:
+            self.timeline.save()
         self.last_press = cur_date
-        # cur_press = PressDate()
-        # cur_press.press_date = cur_date
-        # self.timeline.press_date.add(cur_press)
+        cur_press = PressDate()
+        cur_press.press_date = cur_date
+        cur_press.save()
+        self.timeline.press_date.add(cur_press)
         super(UserPlant, self).save(*args, **kwargs)
-
-class Timeline(models.Model):
-    plant = models.OneToOneField(UserPlant)
-    press_date = models.ManyToManyField(PressDate)
