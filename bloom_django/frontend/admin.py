@@ -1,5 +1,5 @@
 from django.contrib import admin
-from frontend.models import Player, PlantType, UserPlant, PlantImageZipFile
+from frontend.models import Player, PlantType, UserPlant, PlantImageZipFile, Timeline
 
 class UserPlantInline(admin.TabularInline):
     model = UserPlant
@@ -15,3 +15,4 @@ admin.site.register(Player, PlayerAdmin)
 admin.site.register(UserPlant)
 admin.site.register(PlantType)
 admin.site.register(PlantImageZipFile)
+admin.site.register(Timeline)
