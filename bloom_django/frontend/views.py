@@ -19,6 +19,18 @@ def play(request):
     template = loader.get_template('play.html')
     return HttpResponse(template.render())
 
+@login_required(login_url='/login/')
+def welcome(request):
+    template = loader.get_template('welcome.html')
+    return HttpResponse(template.render())
+
+@login_required(login_url='/login/')
+def create_plant(request):
+    if request.POST:
+        return HttpResponse("/play/test/")
+    template = loader.get_template('create.html')
+    return HttpResponse(template.render())
+
 def logout_user(request):
     from django.contrib.auth import logout
     logout(request)

@@ -2,48 +2,68 @@
  * Created by Miranda on 9/5/15.
  */
 
-$(document).ready(function () {
+$(document).ready(function() {
 
-    var plantType;
-    var plantName;
-    var bg;
+  var plantType;
+  var plantName;
+  var bg;
+  var $plantpick = $('.plant-pick');
+  var $namepick = $('.name-pick');
+  var $bgpick = $('.bg-pick');
 
-    $(".plant-pick").on("submit", function (event) {
-        event.preventDefault();
-        $(".title").remove();
-        $(".plant-pick").addClass("plant-name");
-        $(".plant-name").removeClass("plant-pick");
-        $(".subtitle").replaceWith("<p class=\"subtitle\"> Give it a name: </p>");
-        $(".plant-pick-container").replaceWith("<input class=\"plant-name-box\" type=\"text\" name=\"plant-name-box\"><br /><input class=\"go\" type=\"submit\" value=\"Go!\" style=\"font-size:15px;padding:5px;\">");
+  window.setTimeout(function() {
+    $('.loading-icon').hide();
+    $plantpick.fadeIn('slow');
+  }, 1500);
+  $("#plant-pick").imagepicker();
+  $("#bg-pick").imagepicker();
 
-        $(".plant-name").on("submit", function (event) {
-            event.preventDefault();
-            plantName = $(".plant-name-box").val();
-            $(".plant-name").addClass("bg-pick");
-            $(".bg-pick").removeClass("plant-name");
-            $(".go").remove();
-            $(".subtitle").replaceWith("<p class=\"subtitle\"> Choose a background: </p>");
-            $(".plant-name-box").replaceWith("<div class=\"bg-pick-container\"><input type=\"image\" src=\"http://placehold.it/250x250\" alt=\"Background 1\"><input type=\"image\" src=\"http://placehold.it/250x250\" alt=\"Background 2\"><input type=\"image\" src=\"http://placehold.it/250x250\" alt=\"Background 3\"> </div>");
+  $(".plant-pick-next").click(function() {
+    plantType = $("#plant-pick").val();
+    if (plantType === '') {
+      alert("Please select a plant type!");
+    } else {
+      $plantpick.slideUp('fast');
+      $namepick.slideDown('fast');
+    }
+  });
 
-            $(".bg-pick").on("submit", function (event) {
-                $(".bg-pick-container").remove();
-                $(".subtitle").replaceWith("<p style=\"color:#ff009c;\">You're all set! Ready to play? </p><a href=\"play.html\" style=\"font-size:25px;text-decoration:none;color:#90b63f;\">Take me to the game! -></p>");
+  $('.name-pick-next').click(function() {
+    plantName = $('.plant-name-box').val();
+    if (plantName === '') {
+      alert("Please type a plant name!");
+    } else {
+      $namepick.slideUp('fast');
+      $bgpick.slideDown('fast');
+    }
+  });
 
-                $.ajax({
-                    url: '/create.html',
-                    dataType: 'text',
-                    type: 'post',
-                    data: $(this).serialize(),
-                    success: function (plantType, plantName, bg) {
-                       }
-                });
-
-            });
-        });
-    });
-
-
+  $('.bg-pick-next').click(function() {
+    bg = $("#bg-pick").val();
+    if (bg === '') {
+      alert("Please select a background!");
+    } else {
+      var postdata = {
+        plantType: plantType,
+        plantName: plantName,
+        background: bg
+      }
+      $.ajax({
+        url: '/create/',
+        dataType: 'text',
+        type: 'post',
+        data: postdata,
+        success: function(data, status) {
+          if (data === 'error') {
+            alert("An error has occurred!");
+          } else {
+            $bgpick.slideUp('fast');
+            var $ready = $('.ready-to-play');
+            $ready.fadeIn('fast');
+            $ready.find('a').attr('href', data);
+          }
+        }
+      });
+    }
+  });
 });
-
-
-

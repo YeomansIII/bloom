@@ -272,8 +272,9 @@ i.mirrored{
     margin: 0;
     width: 60%;
     background-image: url("../img/bg/bedroom.jpg");
-    -webkit-background-size: 800px 800px;
-    background-size: 800px 800px;
+    background-position: bottom;
+    background-size: cover;
+    -webkit-background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -331,6 +332,22 @@ i.mirrored{
     margin: 0;
     padding: 0px 10px 0 10px;
 }
+
+.calendar .calendar-dates p{
+    font-size: 20px;
+}
+
+.top-sliver-date{
+
+}
+
+.middle-sliver-date{
+    margin-top: 260px;
+}
+
+.bottom-sliver-date{
+    margin-top: 300px;
+}
 /* Welcome Page for new users */
 .welcome-container{
     height: 50vh;
@@ -368,6 +385,13 @@ i.mirrored{
     margin-top: 10vh;
 }
 
+.flex-center {
+  display: -webkit-box;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
 .create img{
     width: 200px;
     height: auto;
@@ -396,6 +420,10 @@ i.mirrored{
 
 /* Friends page */
 
+.hide-friends-scrollbar{
+    overflow: hidden;
+}
+
 .friends-box{
     width: 600px;
     height: 500px;
@@ -404,12 +432,18 @@ i.mirrored{
     opacity: 0.5;
     margin: 0 auto;
     position: relative;
+    overflow: auto;
 }
 
 .friends-box p{
     text-align: center;
     padding-top: 30px;
     font-size: 40px;
+}
+
+.friends-box img{
+    display: block;
+    margin: 0 auto;
 }
 
 
