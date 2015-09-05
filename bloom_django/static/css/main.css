@@ -272,15 +272,47 @@ i.mirrored{
 
 .game-menu{
     height: 800px;
-    width: 100px;
-    background-color: #ff009c;
+    width: 140px;
+    background-color: #90b63f;
     margin: 0;
+    padding: 0px 10px 0 10px;
 }
+
+.game-menu p, .calendar p{
+    text-align: center;
+    color: #fff;
+    font-size: 25px;
+}
+
+.game-menu i{
+    color: #fff;
+}
+
+.game-menu span{
+    color: #fff;
+    font-size: 20px;
+    padding-top: 3px;
+    padding-left: 8px;
+    position: absolute;
+}
+
+.game-menu img{
+    margin: 0 auto;
+    display: block;
+}
+
+.game-menu .garden{
+    font-size: 15px;
+    color: #fff;
+    text-align: center;
+}
+
 .calendar{
     height: 800px;
-    width: 100px;
+    width: 140px;
     background-color:#90b63f;
     margin: 0;
+    padding: 0px 10px 0 10px;
 }
 /* Welcome Page for new users */
 .welcome-container{
