@@ -245,7 +245,43 @@ i.mirrored{
 /* Log in Page is essentially the same as Sign up page*/
 
 /* Game Page */
+.game-page-container{
+    height: 50vh;
+    margin-top: 5vh;
+}
 
+.game-container{
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.game-page-container .title-logo img{
+    width: 150px;
+    height: auto;
+}
+
+.game-play-container{
+    margin: 0;
+    width: 60%;
+}
+
+.game-play-container img{
+    margin: 0 auto;
+}
+
+.game-menu{
+    height: 800px;
+    width: 100px;
+    background-color: #ff009c;
+    margin: 0;
+}
+.calendar{
+    height: 800px;
+    width: 100px;
+    background-color:#90b63f;
+    margin: 0;
+}
 /* Welcome Page for new users */
 .welcome-container{
     height: 50vh;
@@ -271,10 +307,43 @@ i.mirrored{
     margin: 0;
 }
 
-.welcome .subtitle{
+.create-link a{
+    text-decoration: none;
+    font-size: 30px;
+    color: #90b63f;
+}
+
+/* Plant creation page */
+.create-container{
+    height: 50vh;
+    margin-top: 10vh;
+}
+
+.create img{
+    width: 200px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.create{
+    margin: 0 auto;
+    text-align: center;
+    font-size: 50px;
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 300;
+}
+
+.create p{
+    margin: 0;
+}
+
+.create .subtitle{
     font-size: 40px;
 }
 
+.bg-pick-container input{
+    padding: 10px;
+}
 
 /* ==========================================================================
    Helper classes
