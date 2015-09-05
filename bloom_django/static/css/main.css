@@ -254,6 +254,8 @@ i.mirrored{
     display: flex;
     margin: 0 auto;
     justify-content: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
 }
 
 .game-page-container .title-logo img{
@@ -264,10 +266,18 @@ i.mirrored{
 .game-play-container{
     margin: 0;
     width: 60%;
+    background-image: url("../img/bg/bedroom.jpg");
+    -webkit-background-size: 800px 800px;
+    background-size: 800px 800px;
+    background-repeat: no-repeat;
 }
+
 
 .game-play-container img{
     margin: 0 auto;
+    height: 800px;
+    width: auto;
+    display: block;
 }
 
 .game-menu{
@@ -276,6 +286,7 @@ i.mirrored{
     background-color: #90b63f;
     margin: 0;
     padding: 0px 10px 0 10px;
+    overflow-y: scroll;
 }
 
 .game-menu p, .calendar p{
@@ -293,7 +304,7 @@ i.mirrored{
     font-size: 20px;
     padding-top: 3px;
     padding-left: 8px;
-    position: absolute;
+    position: static;
 }
 
 .game-menu img{
@@ -392,6 +403,25 @@ i.mirrored{
 .bg-pick-container input{
     padding: 10px;
 }
+
+/* Friends page */
+
+.friends-box{
+    width: 600px;
+    height: 500px;
+    border-radius: 20px;
+    background-color:#90b63f ;
+    opacity: 0.5;
+    margin: 0 auto;
+    position: relative;
+}
+
+.friends-box p{
+    text-align: center;
+    padding-top: 30px;
+    font-size: 40px;
+}
+
 
 /* ==========================================================================
    Helper classes
