@@ -35,6 +35,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'frontend',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -53,7 +54,9 @@ ROOT_URLCONF = 'settings.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -80,11 +83,11 @@ AUTH_LDAP_GROUP_TYPE = PosixGroupType()
 AUTH_LDAP_CACHE_GROUPS = True
 
 ####Replace with proper group name for the website you are working on.  Group should be created in yeomans.io ldap admin, contact jason@yeomans.us to add a group
-AUTH_LDAP_REQUIRE_GROUP = "cn=GROUPNAMEdjango,ou=groups,dc=yeomans,dc=io"
+AUTH_LDAP_REQUIRE_GROUP = "cn=bloomdjango,ou=groups,dc=yeomans,dc=io"
 AUTH_LDAP_USER_ATTR_MAP = {"first_name": "givenName", "last_name": "sn"}
 AUTH_LDAP_USER_FLAGS_BY_GROUP = {
-    "is_staff": "cn=GROUPNAMEdjango,ou=groups,dc=yeomans,dc=io",
-    "is_superuser": "cn=GROUPNAMEdjangosuper,ou=groups,dc=yeomans,dc=io"
+    "is_staff": "cn=bloomdjango,ou=groups,dc=yeomans,dc=io",
+    "is_superuser": "cn=bloomdjangosuper,ou=groups,dc=yeomans,dc=io"
 }
 
 AUTH_LDAP_BIND_DN = ""
@@ -119,7 +122,12 @@ DATABASES = {
     },
 }
 
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
