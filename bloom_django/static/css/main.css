@@ -390,6 +390,10 @@ i.mirrored{
 
 /* Friends page */
 
+.hide-friends-scrollbar{
+    overflow: hidden;
+}
+
 .friends-box{
     width: 600px;
     height: 500px;
@@ -398,12 +402,18 @@ i.mirrored{
     opacity: 0.5;
     margin: 0 auto;
     position: relative;
+    overflow: auto;
 }
 
 .friends-box p{
     text-align: center;
     padding-top: 30px;
     font-size: 40px;
+}
+
+.friends-box img{
+    display: block;
+    margin: 0 auto;
 }
 
 
