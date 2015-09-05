@@ -59,3 +59,10 @@ class UserPlant(models.Model):
 
     def __unicode__(self):
         return self.name
+
+class Background(models.Model):
+    background_name = models.CharField(max_length=100)
+    file = models.FileField(upload_to="backgrounds/")
+
+    def __unicode__(self):
+        return self.background_name
