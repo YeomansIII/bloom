@@ -319,6 +319,13 @@ i.mirrored{
     margin-top: 10vh;
 }
 
+.flex-center {
+  display: -webkit-box;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
 .create img{
     width: 200px;
     height: auto;
