@@ -267,8 +267,9 @@ i.mirrored{
     margin: 0;
     width: 60%;
     background-image: url("../img/bg/bedroom.jpg");
-    -webkit-background-size: 800px 800px;
-    background-size: 800px 800px;
+    background-position: bottom;
+    background-size: cover;
+    -webkit-background-size: cover;
     background-repeat: no-repeat;
 }
 
