@@ -4,22 +4,25 @@ from django.contrib.auth.models import User
 # Create your models here.
 class Player(models.Model):
     user = models.OneToOneField(User)
-    friends = models.ManyToManyField("self")
+    friends = models.ManyToManyField("self", null=True, blank=True)
 
-class Plant_Type(models.Model):
+    def __unicode__(self):
+        return self.user.username
+
+class PlantImageZipFile(models.Model):
+    image_base = models.CharField(max_length=100)
+    file = models.FileField(upload_to="plant_zips/")
+
+class PlantType(models.Model):
     name = models.CharField(max_length=100)
-    image = models.OneToOneField(Plant_Image_Zip_File)
+    image = models.OneToOneField(PlantImageZipFile)
 
-class User_Plant(models.Model):
+class UserPlant(models.Model):
     name = models.CharField(max_length=100)
     last_press = models.DateField(auto_now=False, auto_now_add=True)
     created_date = models.DateField(auto_now=False, auto_now_add=True)
-    type = models.ForeignKey(Plant_Type)
+    type = models.ForeignKey(PlantType)
     owner = models.ForeignKey(Player)
-
-class Plant_Image_Zip_File(models.Model):
-    image_base = models.CharField(max_length=100)
-    file = models.FileField(storage=fs)
 
     #def save(self, *args, **kwargs):
         #if not self.id:
