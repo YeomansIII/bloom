@@ -242,9 +242,39 @@ i.mirrored{
 .already-have-account a:hover{
     color: #ff009c;
 }
-/* Log in Page */
+/* Log in Page is essentially the same as Sign up page*/
 
 /* Game Page */
+
+/* Welcome Page for new users */
+.welcome-container{
+    height: 50vh;
+    margin-top: 10vh;
+}
+
+
+.welcome img{
+    width: 200px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.welcome{
+    margin: 0 auto;
+    text-align: center;
+    font-size: 50px;
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 300;
+}
+
+.welcome p{
+    margin: 0;
+}
+
+.welcome .subtitle{
+    font-size: 40px;
+}
+
 
 /* ==========================================================================
    Helper classes
