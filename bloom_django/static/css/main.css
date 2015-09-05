@@ -100,10 +100,12 @@ body{
     font-family: "Josefin Sans", sans-serif;
 }
 
-.home-container{
+.container{
     height: 50vh;
     margin-top: 15vh;
 }
+
+/* Index Page */
 
 .title-logo {
     margin: 0 auto;
@@ -183,13 +185,66 @@ i.mirrored{
     color: #ff009c;
 }
 
+/* Sign Up Page */
 
-.login-container{
-    height: 50vh;
-    margin-top: 15vh;
+.sign-up-box{
+    width: 600px;
+    height: 500px;
+    border-radius: 20px;
+    background-color: #fff;
+    opacity: 0.5;
+    margin: 0 auto;
+    position: relative;
+}
+
+.sign-up-box p{
+    text-align: center;
+    padding-top: 30px;
+    font-size: 40px;
 }
 
 
+.sign-up-box a{
+    text-decoration: none;
+    color: #ff009c;
+}
+
+.sign-up-form{
+    margin: 0 auto;
+    width: 80%;
+    font-size: 20px;
+}
+
+.sign-up-form input{
+    width: 100%;
+}
+
+.sign-up-box p.already-have-account{
+    text-align: right;
+    color: #000;
+    text-decoration: none;
+    width: 100%;
+    position: absolute;
+    right: 50px;
+    font-size: 15px;
+}
+
+.already-have-account a{
+    color: #000;
+    text-decoration: none;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition:.5s;
+}
+
+.already-have-account a:hover{
+    color: #ff009c;
+}
+/* Log in Page */
+
+/* Game Page */
 
 /* ==========================================================================
    Helper classes
