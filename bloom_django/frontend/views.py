@@ -4,6 +4,7 @@ from django.shortcuts import render_to_response,redirect
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.contrib.auth.models import User
+from .models import PlantType, UserPlant, Player, Background
 
 # Create your views here.
 def index(request):
@@ -15,9 +16,13 @@ def index(request):
     return HttpResponse(template.render())
 
 @login_required(login_url='/login/')
-def play(request):
+def play(request, plant_name):
+    plant = UserPlant.objects.get(owner__user=request.user, name=plant_name)
     template = loader.get_template('play.html')
-    return HttpResponse(template.render())
+    context = RequestContext(request, {
+        'plant' : plant,
+    })
+    return HttpResponse(template.render(context))
 
 @login_required(login_url='/login/')
 def welcome(request):
@@ -27,9 +32,23 @@ def welcome(request):
 @login_required(login_url='/login/')
 def create_plant(request):
     if request.POST:
-        return HttpResponse("/play/test/")
+        plantType = request.POST['plantType']
+        plantType = PlantType.objects.get(name=plantType)
+        plantName = request.POST['plantName']
+        background = request.POST['background']
+        background = Background.objects.get(background_name=background)
+        player = Player.objects.get(user=request.user)
+        new_plant = UserPlant.objects.create(name=plantName, type=plantType, owner=player, background=background)
+        new_plant.save()
+        return HttpResponse("/play/myplant/"+new_plant.name)
+    plant_types = PlantType.objects.all()
+    backgrounds = Background.objects.all()
     template = loader.get_template('create.html')
-    return HttpResponse(template.render())
+    context = RequestContext(request, {
+        'plant_types': plant_types,
+        'backgrounds' : backgrounds,
+    })
+    return HttpResponse(template.render(context))
 
 def logout_user(request):
     from django.contrib.auth import logout
