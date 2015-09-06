@@ -19,13 +19,14 @@ class PlantImageZipFile(models.Model):
 
 class PlantType(models.Model):
     name = models.CharField(max_length=100)
-    image = models.OneToOneField(PlantImageZipFile)
+    sample_image = models.ImageField(upload_to="plant_type_samples/")
+    imagezip = models.OneToOneField(PlantImageZipFile)
 
     def __unicode__(self):
         return self.name
 
 class PressDate(models.Model):
-    press_date = models.DateField()
+    press_date = models.DateField(auto_now=False, auto_now_add=True)
 
     def __unicode__(self):
         return self.press_date
@@ -37,6 +38,12 @@ class Timeline(models.Model):
     def __unicode__(self):
         return self.plant_name or ''
 
+class Background(models.Model):
+    background_name = models.CharField(max_length=100)
+    image = models.ImageField(upload_to="backgrounds/")
+
+    def __unicode__(self):
+        return self.background_name
 
 class UserPlant(models.Model):
     name = models.CharField(max_length=100)
@@ -44,25 +51,21 @@ class UserPlant(models.Model):
     created_date = models.DateField(auto_now=False, auto_now_add=True)
     type = models.ForeignKey(PlantType)
     owner = models.ForeignKey(Player)
-    timeline = models.OneToOneField(Timeline, null=True)
+    timeline = models.OneToOneField(Timeline)
+    background = models.ForeignKey(Background)
 
     def save(self, *args, **kwargs):
         cur_date = datetime.datetime.today()
         if not self.id:
-            self.timeline.save()
+            pressdatenow = PressDate()
+            pressdatenow.save()
+            new_timeline = Timeline(plant_name=self.name)
+            new_timeline.save()
+            new_timeline.press_date.add(pressdatenow)
+            new_timeline.save()
+            self.timeline = new_timeline
         self.last_press = cur_date
-        cur_press = PressDate()
-        cur_press.press_date = cur_date
-        cur_press.save()
-        self.timeline.press_date.add(cur_press)
         super(UserPlant, self).save(*args, **kwargs)
 
     def __unicode__(self):
         return self.name
-
-class Background(models.Model):
-    background_name = models.CharField(max_length=100)
-    file = models.FileField(upload_to="backgrounds/")
-
-    def __unicode__(self):
-        return self.background_name
