@@ -4,7 +4,7 @@ from django.shortcuts import render_to_response,redirect
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.contrib.auth.models import User
-from .models import PlantType, UserPlant, Player, Background
+from .models import PlantType, UserPlant, Player, Background, Pot
 import datetime
 
 
@@ -57,21 +57,25 @@ def pick_plant(request):
 @login_required(login_url='/login/')
 def create_plant(request):
     if request.POST:
+        pot = request.POST['pot']
+        pot = Pot.objects.get(name=pot)
         plantType = request.POST['plantType']
         plantType = PlantType.objects.get(name=plantType)
         plantName = request.POST['plantName']
         background = request.POST['background']
         background = Background.objects.get(background_name=background)
         player = Player.objects.get(user=request.user)
-        new_plant = UserPlant.objects.create(name=plantName, type=plantType, owner=player, background=background)
+        new_plant = UserPlant.objects.create(name=plantName, type=plantType, owner=player, pot=pot, background=background)
         new_plant.save()
         return HttpResponse("/play/myplant/"+new_plant.name)
     plant_types = PlantType.objects.all()
     backgrounds = Background.objects.all()
+    pots = Pot.objects.all()
     template = loader.get_template('create.html')
     context = RequestContext(request, {
         'plant_types': plant_types,
         'backgrounds' : backgrounds,
+        'pots' : pots
     })
     return HttpResponse(template.render(context))
 
@@ -84,14 +88,18 @@ def customize_plant(request, plant_name):
             plant.background = background
         if 'plantName' in request.POST:
             plant.name = request.POST['plantName']
+        if 'pot' in request.POST:
+            plant.pot = Pot.objects.get(name=request.POST['pot']);
         plant.save()
         return HttpResponse("/play/myplant/"+plant.name)
+    pots = Pot.objects.all()
     backgrounds = Background.objects.all()
     plant = UserPlant.objects.get(name=plant_name, owner__user=request.user)
     template = loader.get_template('customize.html')
     context = RequestContext(request, {
         'backgrounds' : backgrounds,
-        'plant' : plant
+        'plant' : plant,
+        'pots' : pots
     })
     return HttpResponse(template.render(context))
 

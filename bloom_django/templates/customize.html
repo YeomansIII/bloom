@@ -33,7 +33,7 @@
                         <img class="pot" src="/static/img/pots/FlowerPot1.png" />
                     </div>
                     <div class="flower">
-                        <img src="/static/img/vine1/Day1.png" style="width:auto;height:300px;"/>
+                        <img src=/media/plant_zips/{{plant.type.imagezip.image_base}}/{{day_num}}.png" style="width:auto;height:300px;"/>
                     </div>
                 </div>
             </div>
@@ -46,12 +46,10 @@
             <div class="flex-center">
                 <select id="plant-pick">
                     <option value=""></option>
-                    <option value="pot1" name="pot" type="image" data-img-src="/static/img/pots/potchoice1.png"
-                            alt="Pot 1"></option>
-                    <option value="pot2" name="pot" type="image" data-img-src="/static/img/pots/potchoice2.png"
-                            alt="Pot 2"></option>
-                    <option value="pot3" name="pot" type="image" data-img-src="/static/img/pots/potchoice3.png"
-                            alt="Pot 3"></option>
+                    {% for p in pots %}
+                    <option value="{{ p.name }}" name="pot" type="image" data-img-src="/media/{{ p.image }}"
+                            alt="{{ p.name }}"></option>
+                    {% endfor %}
                 </select>
             </div>
         </div>

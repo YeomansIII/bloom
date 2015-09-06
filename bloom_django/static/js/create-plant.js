@@ -7,9 +7,11 @@ $(document).ready(function() {
   var plantType;
   var plantName;
   var bg;
+  var pot;
   var $plantpick = $('.plant-pick');
   var $namepick = $('.name-pick');
   var $bgpick = $('.bg-pick');
+  var $potpick = $('.pot-pick');
 
   window.setTimeout(function() {
     $('.loading-icon').hide();
@@ -17,6 +19,7 @@ $(document).ready(function() {
   }, 1500);
   $("#plant-pick").imagepicker();
   $("#bg-pick").imagepicker();
+  $("#pot-pick").imagepicker();
 
   $(".plant-pick-next").click(function() {
     $('.title').remove();
@@ -35,8 +38,19 @@ $(document).ready(function() {
       alert("Please type a plant name!");
     } else {
       $namepick.slideUp('fast');
+      $potpick.slideDown('fast');
+    }
+  });
+
+  $('.pot-pick-next').click(function(){
+    pot = $('#pot-pick').val();
+    if(pot === ''){
+      alert("Please select a pot!");
+    } else {
+      $potpick.slideUp('fast');
       $bgpick.slideDown('fast');
     }
+
   });
 
   $('.bg-pick-next').click(function() {
@@ -47,6 +61,7 @@ $(document).ready(function() {
       var postdata = {
         plantType: plantType,
         plantName: plantName,
+        pot: pot,
         background: bg
       }
       $.ajax({

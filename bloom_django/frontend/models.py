@@ -87,6 +87,11 @@ class Background(models.Model):
     def __unicode__(self):
         return self.background_name
 
+class Pot(models.Model):
+    name = models.CharField(max_length=100)
+    image = models.ImageField(upload_to="pots/")
+
+
 class UserPlant(models.Model):
     name = models.CharField(max_length=100)
     last_press = models.DateField(auto_now=False, auto_now_add=True)
@@ -95,6 +100,8 @@ class UserPlant(models.Model):
     owner = models.ForeignKey(Player)
     timeline = models.OneToOneField(Timeline)
     background = models.ForeignKey(Background)
+    day_num = models.IntegerField(default=0)
+    pot = models.ForeignKey(Pot)
 
     def save(self, *args, **kwargs):
         if not self.id:

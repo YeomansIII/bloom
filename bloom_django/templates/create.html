@@ -34,7 +34,7 @@
           <select id="plant-pick">
             <option value=""></option>
             {% for pt in plant_types %}
-            <option value="{{ pt.name }}" name="flower" type="image" data-img-src="/media/{{ pt.sample_image }}" alt="{{ pt.name }}"></option>
+            <option value="{{ pt.name }}" name="flower" type="image" data-img-src="/media/{{ pt.piece_image }}" alt="{{ pt.name }}"></option>
             {% endfor %}
           </select>
         </div>
@@ -46,6 +46,20 @@
         <br />
         <input class="name-pick-next" type="button" value="Go!" style="font-size:15px;padding:5px;">
       </div>
+      <div class="pot-pick" style="display:none">
+      <p class="subtitle"> Choose a pot design: </p>
+      <div class="flex-center">
+        <select id="pot-pick">
+          <option value=""></option>
+          {% for p in pots %}
+          <option value="{{ p.name }}" name="pot" type="image" data-img-src="/media/{{ p.image }}"
+                  alt="{{ p.name }}"></option>
+          {% endfor %}
+        </select>
+      </div>
+        <input class="pot-pick-next" type="button" value="Next" style="font-size:15px;padding:5px;">
+    </div>
+
       <div class="bg-pick" style="display:none">
         <p class="subtitle"> Pick your background: </p>
         <div class="bg-pick-container flex-center">
