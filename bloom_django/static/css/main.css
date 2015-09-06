@@ -285,14 +285,6 @@ i.mirrored{
     position: relative;
 }
 
-
-.game-play-container img{
-    margin: 0 auto;
-    max-height: 100%;
-    width: auto;
-    display: block;
-}
-
 .game-menu{
     height: 800px;
     width: 140px;
@@ -329,6 +321,38 @@ i.mirrored{
     font-size: 15px;
     color: #fff;
     text-align: center;
+}
+
+.plant-container{
+    width: 20%;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.flower{
+    position: absolute;
+    bottom: 3%;
+    z-index: 0;
+    left: -25%;
+
+}
+
+.flower img{
+    width: auto;
+    height:800px;
+}
+
+.pot{
+    position: absolute;
+    bottom: -1.5%;
+    z-index: 1;
+}
+
+.pot img{
+    height: auto;
+    margin: 0 auto;
+    display: block;
 }
 
 .calendar{
@@ -384,10 +408,19 @@ i.mirrored{
     margin-top: 10vh;
 }
 
+
+.flex-center {
+    display: -webkit-box;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
 .create img{
     width: 200px;
     height: auto;
     margin: 0 auto;
+    display: block;
 }
 
 .create{
