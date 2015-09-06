@@ -105,6 +105,10 @@ body{
     margin-top: 15vh;
 }
 
+.white {
+    color: #fff;
+}
+
 /* Index Page */
 
 .title-logo {
@@ -261,7 +265,7 @@ i.mirrored{
 
 .container .title-logo img {
     margin-top: 23px;
-    width: 150px;
+    width: 200px;
     height: auto;
 }
 
@@ -478,7 +482,6 @@ i.mirrored{
     text-align: center;
     border-radius: 20px;
     background-color:#90b63f ;
-    opacity: 0.5;
     margin: 0 auto;
     position: relative;
     padding-bottom: 40px;
@@ -628,6 +631,10 @@ Modify as content requires.
 
     .watering-can {
         display: none;
+    }
+    
+    .container .title-logo img {
+        width: 150px;
     }
 }
 
