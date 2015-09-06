@@ -244,7 +244,6 @@ i.mirrored{
 /* Game Page */
 .game-page-container{
     height: 50vh;
-    margin-top: 5vh;
 }
 
 .game-container{
@@ -272,9 +271,8 @@ i.mirrored{
     margin: 0;
     width: 60%;
     background-image: url("../img/bg/bedroom.jpg");
-    background-position: bottom;
-    background-size: cover;
-    -webkit-background-size: cover;
+    -webkit-background-size: 800px 800px;
+    background-size: 800px 800px;
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -332,22 +330,6 @@ i.mirrored{
     margin: 0;
     padding: 0px 10px 0 10px;
 }
-
-.calendar .calendar-dates p{
-    font-size: 20px;
-}
-
-.top-sliver-date{
-
-}
-
-.middle-sliver-date{
-    margin-top: 260px;
-}
-
-.bottom-sliver-date{
-    margin-top: 300px;
-}
 /* Welcome Page for new users */
 .welcome-container{
     height: 50vh;
@@ -385,13 +367,6 @@ i.mirrored{
     margin-top: 10vh;
 }
 
-.flex-center {
-  display: -webkit-box;
-  display: flex;
-  -webkit-justify-content: center;
-  justify-content: center;
-}
-
 .create img{
     width: 200px;
     height: auto;
@@ -420,10 +395,6 @@ i.mirrored{
 
 /* Friends page */
 
-.hide-friends-scrollbar{
-    overflow: hidden;
-}
-
 .friends-box{
     width: 600px;
     height: 500px;
@@ -432,18 +403,12 @@ i.mirrored{
     opacity: 0.5;
     margin: 0 auto;
     position: relative;
-    overflow: auto;
 }
 
 .friends-box p{
     text-align: center;
     padding-top: 30px;
     font-size: 40px;
-}
-
-.friends-box img{
-    display: block;
-    margin: 0 auto;
 }
 
 
@@ -548,19 +513,12 @@ Modify as content requires.
         display:block;
     }
     
-/*
-    .login {
-        width: 50%;
+    .friends-box {
+        border-radius: 0;
+        width:100%;
+        height: auto;
+        text-align: center;
     }
-    
-    .sign-up {
-        width: 50%;
-    }
-    
-    .title-logo {
-        width: 100%;
-    }
-*/
 }
 
 @media print,
