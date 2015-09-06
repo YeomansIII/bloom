@@ -29,7 +29,7 @@ class PressDate(models.Model):
     press_date = models.DateField(auto_now=False, auto_now_add=True)
 
     def __unicode__(self):
-        return self.press_date
+        return self.press_date.strftime('%m/%d/%Y')
 
 class Timeline(models.Model):
     plant_name = models.CharField(max_length=100, null=True)

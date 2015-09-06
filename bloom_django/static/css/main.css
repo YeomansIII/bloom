@@ -395,9 +395,16 @@ i.mirrored{
     padding: 0px 10px 0 10px;
 }
 
+.calendar .calendar-dates {
+    display: flex;
+    flex-direction: column-reverse;
+    height: 675px;
+}
+
 .calendar .calendar-dates .sliver-date{
     font-size: 20px;
-    color: #90b63f;
+    line-height: 1.75px;
+    /*color: #90b63f;*/
 }
 
 .date-pair{
