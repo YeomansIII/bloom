@@ -33,9 +33,9 @@
         <div class="plant-pick-container flex-center">
           <select id="plant-pick">
             <option value=""></option>
-            <option value="flowerTypeOne" name="flower" type="image" data-img-src="http://placekitten.com/200/250" alt="Flower 1"></option>
-            <option value="flowerTypeTwo" name="flower" type="image" data-img-src="http://placekitten.com/200/250" alt="Flower 2"></option>
-            <option value="flowerTypeThree" name="flower" type="image" data-img-src="http://placekitten.com/200/250" alt="Flower 3"></option>
+            {% for pt in plant_types %}
+            <option value="{{ pt.name }}" name="flower" type="image" data-img-src="/media/{{ pt.sample_image }}" alt="{{ pt.name }}"></option>
+            {% endfor %}
           </select>
         </div>
         <input class="plant-pick-next" type="button" value="Next" style="font-size:15px;padding:5px;">
@@ -51,9 +51,9 @@
         <div class="bg-pick-container flex-center">
           <select id="bg-pick">
             <option value=""></option>
-            <option value="1" type="image" data-img-src="http://placehold.it/250x250" alt="Background 1"></option>
-            <option value="2" type="image" data-img-src="http://placehold.it/250x250" alt="Background 2"></option>
-            <option value="3" type="image" data-img-src="http://placehold.it/250x250" alt="Background 3"></option>
+            {% for bg in backgrounds %}
+            <option value="{{ bg.background_name }}" type="image" data-img-src="/media/{{ bg.image }}" alt="{{ bg.name }}"></option>
+            {% endfor %}
           </select>
         </div>
         <input class="bg-pick-next" type="button" value="Finish" style="font-size:15px;padding:5px;">
