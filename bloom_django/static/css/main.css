@@ -399,8 +399,6 @@ i.mirrored{
     animation: tada 2s;
 }
 
-
-
 .calendar{
     height: 650px;
     width: 140px;
@@ -412,7 +410,7 @@ i.mirrored{
 .calendar .calendar-dates {
     display: flex;
     flex-direction: column-reverse;
-    height: 675px;
+    height: 520px;
 }
 
 .calendar .calendar-dates .sliver-date{
