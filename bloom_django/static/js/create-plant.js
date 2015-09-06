@@ -19,6 +19,7 @@ $(document).ready(function() {
   $("#bg-pick").imagepicker();
 
   $(".plant-pick-next").click(function() {
+    $('.title').remove();
     plantType = $("#plant-pick").val();
     if (plantType === '') {
       alert("Please select a plant type!");
