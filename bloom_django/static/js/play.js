@@ -13,7 +13,7 @@ window.onload = function() {
     var pngIndex = background.indexOf(".png");
     var picNo = Number(background.substring(dayIndex + 3, pngIndex));
     var dates = $(".sliver-date");
-    for (var i = 0; i <= picNo; i++) {
-        dates[9 - i].removeAttribute("hidden");
+    for (var i = 0; i < picNo; i++) {
+        dates[9 - i].style.color = "#fff";
     }
 }
