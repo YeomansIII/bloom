@@ -7,4 +7,10 @@ window.setTimeout(function() {
   $('.loading-icon').hide();
   $plantpick.fadeIn('slow');
 }, 1500);
-$("#plant-pick").imagepicker();
+$("#plant-pick").imagepicker({
+  show_label: true
+});
+
+$('.plant-pick-next').click(function() {
+  window.location.href = '/play/myplant/' + $("#plant-pick").val();
+});
