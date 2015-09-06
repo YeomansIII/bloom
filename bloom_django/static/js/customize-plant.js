@@ -5,44 +5,41 @@
  * Created by Miranda on 9/5/15.
  */
 
-$(document).ready(function () {
+$(document).ready(function() {
 
-    var plantType;
-    var plantName;
-    var bg;
-    var $plantpick = $('.plant-pick');
-    var $namepick = $('.name-pick');
-    var $bgpick = $('.bg-pick');
+  var plantName;
+  var bg;
+  var $plantpick = $('.plant-pick');
+  var $namepick = $('.name-pick');
+  var $bgpick = $('.bg-pick');
 
-    $("#plant-pick").imagepicker();
-    $("#bg-pick").imagepicker();
+  $("#plant-pick").imagepicker();
+  $("#bg-pick").imagepicker();
 
-    plantType = $("#plant-pick").val();
+  $(".save").click(function() {
+    var postdata = {};
     plantName = $('.plant-name-box').val();
+    if (plantName !== '') {
+      postdata['plantName'] = plantName;
+    }
     bg = $("#bg-pick").val();
-
-    $(".save").on("submit", function () {
-        var postdata = {
-            plantType: plantType,
-            plantName: plantName,
-            background: bg
+    if (bg !== '') {
+      postdata['background'] = bg;
+    }
+    $.ajax({
+      url: '#',
+      dataType: 'text',
+      type: 'post',
+      data: postdata,
+      success: function(data, status) {
+        console.log(data);
+        if (data === 'error') {
+          alert("An error has occurred!");
+        } else {
+          window.location.href = data;
         }
-        $.ajax({
-            url: '/create/',
-            dataType: 'text',
-            type: 'post',
-            data: postdata,
-            success: function (data, status) {
-                if (data === 'error') {
-                    alert("An error has occurred!");
-                } else {
-                    $bgpick.slideUp('fast');
-                    var $ready = $('.ready-to-play');
-                    $ready.fadeIn('fast');
-                    $ready.find('a').attr('href', data);
-                }
-            }
-        });
+      }
     });
+  });
 
 });

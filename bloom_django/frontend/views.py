@@ -64,6 +64,26 @@ def create_plant(request):
     })
     return HttpResponse(template.render(context))
 
+@login_required(login_url='/login/')
+def customize_plant(request, plant_name):
+    if request.POST:
+        plant = UserPlant.objects.get(name=plant_name, owner__user=request.user)
+        if 'background' in request.POST:
+            background = Background.objects.get(background_name=request.POST['background'])
+            plant.background = background
+        if 'plantName' in request.POST:
+            plant.name = request.POST['plantName']
+        plant.save()
+        return HttpResponse("/play/myplant/"+plant.name)
+    backgrounds = Background.objects.all()
+    plant = UserPlant.objects.get(name=plant_name, owner__user=request.user)
+    template = loader.get_template('customize.html')
+    context = RequestContext(request, {
+        'backgrounds' : backgrounds,
+        'plant' : plant
+    })
+    return HttpResponse(template.render(context))
+
 def logout_user(request):
     from django.contrib.auth import logout
     logout(request)
