@@ -30,6 +30,18 @@ def welcome(request):
     return HttpResponse(template.render())
 
 @login_required(login_url='/login/')
+def pick_plant(request):
+    #player = Player.objects.get(user=request.user)
+    print(request.user.username)
+    my_plants = UserPlant.objects.filter(owner__user=request.user)
+    print(my_plants)
+    template = loader.get_template('choose.html')
+    context = RequestContext(request, {
+        'my_plants': my_plants,
+    })
+    return HttpResponse(template.render(context))
+
+@login_required(login_url='/login/')
 def create_plant(request):
     if request.POST:
         plantType = request.POST['plantType']
