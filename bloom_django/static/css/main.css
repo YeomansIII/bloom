@@ -330,6 +330,15 @@ i.mirrored{
     margin: 0;
     padding: 0px 10px 0 10px;
 }
+
+.calendar .calendar-dates .sliver-date{
+    font-size: 20px;
+}
+
+.date-pair{
+    margin-bottom: 60px;
+}
+
 /* Welcome Page for new users */
 .welcome-container{
     height: 50vh;
