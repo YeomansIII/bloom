@@ -121,7 +121,7 @@ body{
 .frontinfo-container{
     width: 50%;
     margin: 0 auto;
-    padding-top: 80px;
+    padding-top: 22%;
 }
 
 
@@ -452,7 +452,7 @@ i.mirrored{
 /* Plant creation page */
 .create-container{
     height: 50vh;
-    margin-top: 10vh;
+    margin-top: 8vh;
 }
 
 .flex-center {
@@ -487,6 +487,35 @@ i.mirrored{
 
 .bg-pick-container input{
     padding: 10px;
+}
+
+/* Choose plant */
+.plant-pick-name{
+    font-size:30px;
+}
+
+.plant-pick-image-container{
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 400px;
+    height: 300px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.plant-pick-image-container .pot{
+    width: 100px;
+    height: auto;
+    left: 30%;
+}
+
+.plant-pick-image-container .flower{
+    width: 25px;
+    height: 300px;
+    left:40%;
+    bottom:15%;
+
 }
 
 /* Friends page */

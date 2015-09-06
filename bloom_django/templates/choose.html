@@ -31,14 +31,30 @@
         <p class="subtitle"> Choose a plant from your garden: </p>
 
         <div class="plant-pick-container flex-center">
-          <select id="plant-pick">
-            <option value=""></option>
+          <!--<select id="plant-pick">-->
+            <!--<option value=""></option>-->
             {% for plant in my_plants %}
-            <option value="{{plant.name}}" name="plant" type="image" data-img-src="http://placehold.it/250x400" data-img-label="{{plant.name}}" alt="{{plant.name}}"></option>
+          <div class="plant-pick">
+            <div class="plant-pick-image" onclick=" window.location.href = '/play/myplant/{{plant.name}}' ">
+              <div class="plant-pick-image-container" style="background-image:url('/media/{{plant.background.image}}');">
+                <div class="pot">
+                  <img class="pot" src="/static/img/pots/FlowerPot1.png" />
+                </div>
+                <div class="flower">
+                  <img src="/static/img/vine1/Day1.png" style="width:auto;height:300px;"/>
+                </div>
+                </div>
+              </div>
+            <div class="plant-pick-name">
+              <p>{{plant.name}}</p>
+              </div>
+            </div>
+
+            <!--<option value="{{plant.name}}" name="plant" type="image" data-img-src="http://placehold.it/250x400" data-img-label="{{plant.name}}" alt="{{plant.name}}"></option>-->
             {% endfor %}
-          </select>
+          <!--</select>-->
         </div>
-        <input class="plant-pick-next" type="button" value="Next" style="font-size:15px;padding:5px;">
+        <!--<input class="plant-pick-next" type="button" value="Next" style="font-size:15px;padding:5px;">-->
 
       </div>
       <script src="/static/js/vendor/jquery-1.11.3.min.js"></script>
