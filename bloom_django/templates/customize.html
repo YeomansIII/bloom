@@ -21,7 +21,7 @@
 <body>
 <div class="create-container">
     <div class="create">
-        <p class="title animated fadeInDown">Customize [Plant-Name]!
+        <p class="title animated fadeInDown">Customize {{plant.name}}!
         </p>
         <!--<img class="loading-icon" src="../static/img/loader.gif" style="width:50px;height:50px;" />-->
 
@@ -60,10 +60,9 @@
             <div class="bg-pick-container flex-center">
                 <select id="bg-pick">
                     <option value=""></option>
-                    <option value="1" type="image" data-img-src="/static/img/bg/bgchoice1.png" alt="Background 1"></option>
-                    <option value="2" type="image" data-img-src="/static/img/bg/bgchoice2.png" alt="Background 2"></option>
-                    <option value="3" type="image" data-img-src="/static/img/bg/bgchoice3.png" alt="Background 3"></option>
-                    <option value="4" type="image" data-img-src="/static/img/bg/bgchoice4.png" alt="Background 4"></option>
+                    {% for bg in backgrounds %}
+                    <option value="{{ bg.background_name }}" type="image" data-img-src="/media/{{ bg.image }}" alt="{{ bg.name }}"></option>
+                    {% endfor %}
                 </select>
             </div>
             <input class="save" type="submit" value="Save" style="font-size:15px;padding:5px;">
