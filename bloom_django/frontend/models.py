@@ -42,6 +42,7 @@ class Timeline(models.Model):
 class Background(models.Model):
     background_name = models.CharField(max_length=100)
     image = models.ImageField(upload_to="backgrounds/")
+    promo_image = models.ImageField(upload_to="promo_images/")
 
     def __unicode__(self):
         return self.background_name
