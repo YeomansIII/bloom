@@ -18,9 +18,11 @@ def index(request):
 @login_required(login_url='/login/')
 def play(request, plant_name):
     plant = UserPlant.objects.get(owner__user=request.user, name=plant_name)
+    my_plants = UserPlant.objects.filter(owner__user=request.user)
     template = loader.get_template('play.html')
     context = RequestContext(request, {
         'plant' : plant,
+        'my_plants' : my_plants,
     })
     return HttpResponse(template.render(context))
 

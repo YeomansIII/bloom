@@ -9,20 +9,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="shortcut icon" type="image/png" href="../static/img/favicon.ico" />
+  <link rel="shortcut icon" type="image/png" href="/static/img/favicon.ico" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:300,400' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="../static/css/animate.css">
-  <link rel="stylesheet" href="../static/css/normalize.css">
-  <link rel="stylesheet" href="../static/css/main.css">
-  <link rel="stylesheet" href="../static/css/image-picker.css">
+  <link rel="stylesheet" href="/static/css/animate.css">
+  <link rel="stylesheet" href="/static/css/normalize.css">
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="stylesheet" href="/static/css/image-picker.css">
 </head>
 
 <body>
   <div class="create-container">
     <div class="create">
       <p class="title">
-        <a href="index.html">
+        <a href="/">
           <img class="logo" src="../static/img/bloom.png" />
         </a>
       </p>
@@ -34,17 +34,17 @@
           <select id="plant-pick">
             <option value=""></option>
             {% for plant in my_plants %}
-            <option value="{{plant.name}}" name="plant" type="image" data-img-src="placehold.it/250x400" alt="{{plant.name}}"></option>
+            <option value="{{plant.name}}" name="plant" type="image" data-img-src="http://placehold.it/250x400" data-img-label="{{plant.name}}" alt="{{plant.name}}"></option>
             {% endfor %}
           </select>
         </div>
         <input class="plant-pick-next" type="button" value="Next" style="font-size:15px;padding:5px;">
 
       </div>
-      <script src="../static/js/vendor/jquery-1.11.3.min.js"></script>
-      <script src="../static/js/image-picker.min.js"></script>
-      <script src="../static/js/main.js"></script>
-      <script src="../static/js/choose-plant.js"></script>
+      <script src="/static/js/vendor/jquery-1.11.3.min.js"></script>
+      <script src="/static/js/image-picker.min.js"></script>
+      <script src="/static/js/main.js"></script>
+      <script src="/static/js/choose-plant.js"></script>
 </body>
 
 </html>
