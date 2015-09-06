@@ -355,6 +355,23 @@ i.mirrored{
     display: block;
 }
 
+.watering-can {
+    position: absolute;
+    bottom: 17px;
+    left: 196%;
+    z-index: 1;
+}
+
+.watering-can img {
+    width: 140px;
+    height: auto;
+}
+
+.watering-can img:hover {
+    -webkit-animation: tada 2s;
+    animation: tada 2s;
+}
+
 .calendar{
     height: 800px;
     width: 140px;
