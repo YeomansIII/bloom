@@ -109,6 +109,10 @@ body{
     color: #fff;
 }
 
+.loading-icon {
+  margin-top: 100px;
+}
+
 .front-border{
     background-image: url("../img/front-border.png");
     background-size: contain;
@@ -462,7 +466,7 @@ i.mirrored{
     justify-content: center;
 }
 
-.create img{
+.create .logo{
     width: 200px;
     height: auto;
     margin: 0 auto;
