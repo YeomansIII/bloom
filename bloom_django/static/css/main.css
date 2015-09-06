@@ -343,6 +343,14 @@ i.mirrored{
     height:800px;
 }
 
+.flower img.active {
+    -webkit-transform: scale(1.2, 1.2);
+  -moz-transform: scale(1.2, 1.2);
+  -o-transform: scale(1.2, 1.2);
+  -ms-transform: scale(1.2, 1.2);
+  transform: scale(1.2, 1.2);
+}
+
 .pot{
     position: absolute;
     bottom: -1.5%;
@@ -371,6 +379,8 @@ i.mirrored{
     -webkit-animation: tada 2s;
     animation: tada 2s;
 }
+
+
 
 .calendar{
     height: 800px;

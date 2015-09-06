@@ -1,6 +1,12 @@
 /**
  * Created by minh on 9/5/15.
  */
+
+$( document ).ready( function() {
+        $('#game-menu-mobile').slicknav();
+    });
+
+
 window.onload = function() {
     var background = $(".game-play-container").children()[0].src;
     var dayIndex = background.indexOf("Day");
