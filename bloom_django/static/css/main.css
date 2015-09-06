@@ -263,7 +263,6 @@ i.mirrored{
 
 /* Game Page */
 .game-page-container{
-    height: 50vh;
 }
 
 .game-container{
@@ -297,17 +296,16 @@ i.mirrored{
 .game-play-container{
     margin: 0;
     width: 60%;
-    background-image: url("../img/bg/bedroom.jpg");
     background-position: center;
     background-size: cover;
     -webkit-background-size: cover;
     background-repeat: no-repeat;
-    height: 800px;
+    height: 650px;
     position: relative;
 }
 
 .game-menu{
-    height: 800px;
+    height: 650px;
     width: 140px;
     background-color: #90b63f;
     margin: 0;
@@ -404,7 +402,7 @@ i.mirrored{
 
 
 .calendar{
-    height: 800px;
+    height: 650px;
     width: 140px;
     background-color:#90b63f;
     margin: 0;
