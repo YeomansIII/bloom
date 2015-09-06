@@ -102,12 +102,28 @@ body{
 
 .container{
     height: 50vh;
-    margin-top: 15vh;
+    margin-top: 10vh;
 }
 
 .white {
     color: #fff;
 }
+
+.front-border{
+    background-image: url("../img/front-border.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 45%;
+    height: 650px;
+    margin: 0 auto;
+}
+
+.frontinfo-container{
+    width: 50%;
+    margin: 0 auto;
+    padding-top: 80px;
+}
+
 
 /* Index Page */
 
@@ -582,6 +598,18 @@ Modify as content requires.
 @media only screen and (max-width: 700px) {
     .container {
         margin-top: 0;
+    }
+
+    .front-border{
+        background-image: none;
+    }
+
+    .frontinfo-container{
+        width: 100%;
+    }
+
+    .sign-up{
+        width: 110%;
     }
 
     .game-play-container {
