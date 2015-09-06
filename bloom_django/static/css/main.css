@@ -326,21 +326,14 @@ i.mirrored{
     padding: 0px 10px 0 10px;
 }
 
-.calendar .calendar-dates p{
+.calendar .calendar-dates .sliver-date{
     font-size: 20px;
 }
 
-.top-sliver-date{
-
+.date-pair{
+    margin-bottom: 60px;
 }
 
-.middle-sliver-date{
-    margin-top: 260px;
-}
-
-.bottom-sliver-date{
-    margin-top: 300px;
-}
 /* Welcome Page for new users */
 .welcome-container{
     height: 50vh;
