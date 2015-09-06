@@ -259,6 +259,12 @@ i.mirrored{
     height: auto;
 }
 
+.container .title-logo img {
+    margin-top: -46px;
+    width: 150px;
+    height: auto;
+}
+
 #game-menu-mobile {
     display: none;
 }
@@ -406,12 +412,14 @@ i.mirrored{
 
 .friends-box{
     width: 600px;
-    height: 500px;
+    height: auto;
+    text-align: center;
     border-radius: 20px;
     background-color:#90b63f ;
     opacity: 0.5;
     margin: 0 auto;
     position: relative;
+    padding-bottom: 40px;
 }
 
 .friends-box p{
@@ -521,12 +529,10 @@ Modify as content requires.
     .slicknav_menu {
         display:block;
     }
-    
+
     .friends-box {
         border-radius: 0;
         width:100%;
-        height: auto;
-        text-align: center;
     }
 }
 
