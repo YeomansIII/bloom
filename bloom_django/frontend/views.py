@@ -134,3 +134,9 @@ def create_user(request):
             if user:
                 return redirect('/login/')
     return render_to_response('signup.html', context_instance=RequestContext(request))
+
+
+@login_required(login_url='/login/')
+def friends(request):
+    template = loader.get_template('friends.html')
+    return HttpResponse(template.render())
