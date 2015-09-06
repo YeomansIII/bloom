@@ -20,6 +20,7 @@ class PlantImageZipFile(models.Model):
 class PlantType(models.Model):
     name = models.CharField(max_length=100)
     sample_image = models.ImageField(upload_to="plant_type_samples/")
+    piece_image = models.ImageField(upload_to="plant_type_pieces/")
     imagezip = models.OneToOneField(PlantImageZipFile)
 
     def __unicode__(self):
