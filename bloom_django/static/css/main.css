@@ -256,6 +256,7 @@ i.mirrored{
     justify-content: center;
     -webkit-justify-content: center;
     -moz-justify-content: center;
+    margin-top: 15px;
 }
 
 .game-page-container .title-logo img{
@@ -632,7 +633,7 @@ Modify as content requires.
     .watering-can {
         display: none;
     }
-    
+
     .container .title-logo img {
         width: 150px;
     }
