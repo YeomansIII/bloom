@@ -119,9 +119,7 @@
 .slicknav_nav a:hover {
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
-  border-radius: 6px;
-  background: #ccc;
-  color: #222; }
+  border-radius: 6px; }
 .slicknav_nav .slicknav_txtnode {
   margin-left: 15px; }
 .slicknav_nav .slicknav_item a {
