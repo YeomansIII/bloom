@@ -403,7 +403,30 @@ i.mirrored{
     animation: tada 2s;
 }
 
+.plant-garden-image-container{
+    width:80px;
+    height: 80px;
+    background-position: center;
+    background-size: contain;
+    margin: 0 auto;
+    position: relative;
+}
 
+.plant-garden-image .pot{
+    width:30px;
+    height:auto;
+    position: absolute;
+    bottom: 0;
+    left: 23%;
+}
+
+.plant-garden-image .flower{
+    width:auto;
+    position: absolute;
+    bottom: 15px;
+    left: 37%;
+    z-index: 1;
+}
 
 .calendar{
     height: 650px;
@@ -415,7 +438,7 @@ i.mirrored{
 
 .calendar .calendar-dates .sliver-date{
     font-size: 20px;
-    color: #90b63f;
+    color: #fff;
 }
 
 .date-pair{

@@ -44,10 +44,21 @@
           <hr>
           <br/> {% for mplant in my_plants %}
           <a href="/play/myplant/{{mplant.name}}">
-            <img src="/static/img/vine1/filler-plant.png" />
-            <br/> Check on {{mplant.name}}!
-            <br/>
-            <br/>
+            <div class="garden">
+              <div class="plant-garden-image">
+                <div class="plant-garden-image-container" style="background-image:url('/media/{{mplant.background.image}}');">
+                  <div class="pot">
+                    <img class="pot" src="/static/img/pots/FlowerPot1.png" />
+                  </div>
+                  <div class="flower">
+                    <img src="/static/img/vine1/Day1.png" style="width:auto;height:80px;"/>
+                  </div>
+                </div>
+              </div>
+              <div class="plant-garden-name">
+                <p>Check on {{mplant.name}}</p>
+              </div>
+            </div>
           </a>
           {% endfor %}
         </div>
@@ -70,29 +81,19 @@
         <hr>
         <div class="calendar-dates">
           <div class="date-pair">
-            <p class="sliver-date">Date 1</p>
+            <p class="sliver-date">September 11</p>
 
-            <p class="sliver-date">Date 2</p>
+            <p class="sliver-date">September 10</p>
           </div>
           <div class="date-pair">
-            <p class="sliver-date">Date 3</p>
+            <p class="sliver-date">September 9</p>
 
-            <p class="sliver-date">Date 4</p>
+            <p class="sliver-date">September 8</p>
           </div>
           <div class="date-pair">
-            <p class="sliver-date">Date 5</p>
+            <p class="sliver-date">September 7</p>
 
-            <p class="sliver-date">Date 6</p>
-          </div>
-          <div class="date-pair">
-            <p class="sliver-date">Date 7</p>
-
-            <p class="sliver-date">Date 8</p>
-          </div>
-          <div class="date-pair">
-            <p class="sliver-date">Date 9</p>
-
-            <p class="sliver-date">Date 10</p>
+            <p class="sliver-date">Today</p>
           </div>
         </div>
       </div>
