@@ -260,7 +260,7 @@ i.mirrored{
 }
 
 .container .title-logo img {
-    margin-top: -46px;
+    margin-top: 23px;
     width: 150px;
     height: auto;
 }
@@ -408,7 +408,6 @@ i.mirrored{
     margin-top: 10vh;
 }
 
-
 .flex-center {
     display: -webkit-box;
     display: flex;
@@ -549,6 +548,10 @@ Modify as content requires.
 }
 
 @media only screen and (max-width: 700px) {
+    .container {
+        margin-top: 0;
+    }
+
     .game-play-container {
         width: 100%;
     }
@@ -568,6 +571,23 @@ Modify as content requires.
     .friends-box {
         border-radius: 0;
         width:100%;
+    }
+
+    .sign-up-box {
+        width: 90%;
+        height: 432px;
+    }
+
+    .plant-name-box {
+        width: 70%;
+    }
+
+    .create {
+        font-size: 35px;
+    }
+
+    .create img {
+        width: 170px;
     }
 }
 
