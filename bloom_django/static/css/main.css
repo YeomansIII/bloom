@@ -271,18 +271,19 @@ i.mirrored{
 .game-play-container{
     margin: 0;
     width: 60%;
-    background-image: url("../img/bg/bedroom.jpg");
-    background-position: bottom;
+    background-image: url("../img/bg/Bedroom.jpg");
+    background-position: center;
     background-size: cover;
     -webkit-background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    height: 800px;
+    position: relative;
 }
 
 
 .game-play-container img{
     margin: 0 auto;
-    height: 800px;
+    max-height: 100%;
     width: auto;
     display: block;
 }
