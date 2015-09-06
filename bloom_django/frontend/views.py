@@ -5,6 +5,8 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.contrib.auth.models import User
 from .models import PlantType, UserPlant, Player, Background
+import datetime
+
 
 # Create your views here.
 def index(request):
@@ -17,6 +19,13 @@ def index(request):
 
 @login_required(login_url='/login/')
 def play(request, plant_name):
+    if request.POST:
+        cur_date = datetime.datetime.today().date()
+        plant = UserPlant.objects.get(owner__user=request.user, name=plant_name)
+        plant.last_press = cur_date
+        plant.save()
+        td = plant.created_date - plant.last_press
+        return HttpResponse('/media/plant_zips/'+plant.type.imagezip.image_base+"/"+str(td.days)+".png")
     plant = UserPlant.objects.get(owner__user=request.user, name=plant_name)
     my_plants = UserPlant.objects.filter(owner__user=request.user)
     template = loader.get_template('play.html')

@@ -6,10 +6,14 @@ $(document).ready(function() {
   $('#game-menu-mobile').slicknav();
   $('.watering-can').click(function() {
     $.ajax({
-      url: '/play/',
+      url: '#',
       dataType: 'text',
       type: 'post',
+      data: {
+        test: 3
+      },
       success: function(data, status) {
+        console.log(data);
         if (data === 'error') {
           alert("An error has occurred!");
         } else {
