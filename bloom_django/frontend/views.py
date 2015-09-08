@@ -139,6 +139,8 @@ def create_user(request):
             user = User.objects.create(username=username)
             user.set_password(password)
             user.save()
+            player = Player.objects.create(user=user)
+            player.save()
             if user:
                 return redirect('/login/')
     return render_to_response('signup.html', context_instance=RequestContext(request))
