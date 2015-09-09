@@ -29,11 +29,9 @@ def play(request, plant_name):
         plant.save()
         return HttpResponse('/media/plant_zips/'+plant.type.imagezip.image_base+"/"+str(plant.day_num)+".png")
     plant = UserPlant.objects.get(owner__user=request.user, name=plant_name)
-    day_num = (plant.last_press - plant.created_date).days
     my_plants = UserPlant.objects.filter(owner__user=request.user)
     template = loader.get_template('play.html')
     context = RequestContext(request, {
-        'day_num' : day_num,
         'plant' : plant,
         'my_plants' : my_plants,
     })
