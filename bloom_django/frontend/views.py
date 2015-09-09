@@ -22,10 +22,12 @@ def play(request, plant_name):
     if request.POST:
         cur_date = datetime.datetime.today().date()
         plant = UserPlant.objects.get(owner__user=request.user, name=plant_name)
-        plant.last_press = cur_date
+        td = plant.last_press - cur_date
+        if td.days >= 1:
+            plant.day_num += 1
+            plant.last_press = cur_date
         plant.save()
-        td = plant.last_press - plant.created_date
-        return HttpResponse('/media/plant_zips/'+plant.type.imagezip.image_base+"/"+str(td.days)+".png")
+        return HttpResponse('/media/plant_zips/'+plant.type.imagezip.image_base+"/"+str(plant.day_num)+".png")
     plant = UserPlant.objects.get(owner__user=request.user, name=plant_name)
     day_num = (plant.last_press - plant.created_date).days
     my_plants = UserPlant.objects.filter(owner__user=request.user)
