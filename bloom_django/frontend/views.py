@@ -24,10 +24,10 @@ def play(request, plant_name):
         plant = UserPlant.objects.get(owner__user=request.user, name=plant_name)
         plant.last_press = cur_date
         plant.save()
-        td = plant.created_date - plant.last_press
+        td = plant.last_press - plant.created_date
         return HttpResponse('/media/plant_zips/'+plant.type.imagezip.image_base+"/"+str(td.days)+".png")
     plant = UserPlant.objects.get(owner__user=request.user, name=plant_name)
-    day_num = (plant.created_date - plant.last_press).days
+    day_num = (plant.last_press - plant.created_date).days
     my_plants = UserPlant.objects.filter(owner__user=request.user)
     template = loader.get_template('play.html')
     context = RequestContext(request, {
