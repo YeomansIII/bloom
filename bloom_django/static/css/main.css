@@ -117,6 +117,7 @@ body{
     background-image: url("../img/front-border.png");
     background-size: contain;
     background-repeat: no-repeat;
+    background-position: center;
     width: 45%;
     height: 650px;
     margin: 0 auto;
@@ -304,6 +305,7 @@ i.mirrored{
     background-size: cover;
     -webkit-background-size: cover;
     background-repeat: no-repeat;
+    background-position: bottom;
     height: 650px;
     position: relative;
 }
