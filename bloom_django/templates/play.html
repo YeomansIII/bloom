@@ -48,10 +48,10 @@
               <div class="plant-garden-image">
                 <div class="plant-garden-image-container" style="background-image:url('/media/{{mplant.background.image}}');">
                   <div class="pot">
-                    <img class="pot" src="/static/img/pots/FlowerPot1.png" />
+                    <img class="pot" src="/media/{{plant.pot.image}}" />
                   </div>
                   <div class="flower">
-                    <img src="/static/img/vine1/Day1.png" style="width:auto;height:80px;"/>
+                    <img src="/media/plant_zips/{{plant.type.imagezip.image_base}}/{{plant.day_num}}.png" style="width:auto;height:80px;"/>
                   </div>
                 </div>
               </div>
@@ -66,10 +66,10 @@
       <div class="game-play-container" style="background-image:url('/media/{{plant.background.image}}');">
         <div class="plant-container">
           <div class="pot">
-            <img class="pot" src="/static/img/pots/FlowerPot1.png" />
+            <img class="pot" src="/media/{{plant.pot.image}}" />
           </div>
           <div class="flower">
-            <img src="/media/plant_zips/{{plant.type.imagezip.image_base}}/{{day_num}}.png" />
+            <img src="/media/plant_zips/{{plant.type.imagezip.image_base}}/{{plant.day_num}}.png" />
           </div>
           <div class="watering-can">
             <img src="/static/img/wateringcan.png" />
