@@ -117,7 +117,6 @@ body{
     background-image: url("../img/front-border.png");
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: center;
     width: 45%;
     height: 650px;
     margin: 0 auto;
