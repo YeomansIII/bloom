@@ -300,12 +300,12 @@ i.mirrored{
 
 .game-play-container{
     margin: 0;
-    width: 60%;
+    width: 46%;
     background-position: center;
-    background-size: cover;
-    -webkit-background-size: cover;
+    background-size: contain;
+    -webkit-background-size: contain;
     background-repeat: no-repeat;
-    background-position: bottom;
+    background-position: top;
     height: 650px;
     position: relative;
 }
@@ -357,9 +357,9 @@ i.mirrored{
 
 .flower{
     position: absolute;
-    bottom: 3%;
+    bottom: 8%;
     z-index: 0;
-    left: -25%;
+    left: -35%;
 
 }
 
@@ -378,7 +378,7 @@ i.mirrored{
 
 .pot{
     position: absolute;
-    bottom: -1.5%;
+    bottom: 0;
     z-index: 1;
 }
 
@@ -391,7 +391,7 @@ i.mirrored{
 .watering-can {
     position: absolute;
     bottom: 17px;
-    left: 196%;
+    left: 150%;
     z-index: 1;
 }
 
@@ -422,7 +422,7 @@ i.mirrored{
     left: 23%;
 }
 
-.plant-garden-image .flower{
+.garden-flower{
     width:auto;
     position: absolute;
     bottom: 15px;
